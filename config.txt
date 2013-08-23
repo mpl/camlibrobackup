@@ -1,2 +1,5 @@
+USER=camlistore
+PASSWORD=pass3179
+SERVER=http://192.168.0.7:3179
 e:\pics\lans
 e:\pics\n4

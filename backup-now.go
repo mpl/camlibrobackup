@@ -3,8 +3,8 @@ package main
 import (
 	"bufio"
 	"bytes"
-	"fmt"
 	"encoding/json"
+	"fmt"
 	"log"
 	"os"
 	"os/exec"
@@ -14,16 +14,16 @@ import (
 
 const (
 	configFile = "config.txt"
-//	camputBin  = "camput.exe"
-	camputBin  = "camput"
+	camputBin  = "camput.exe"
+	//	camputBin  = "camput"
 	camputConfig = "client-config.json"
-	blobRootLog = "log.txt"
+	blobRootLog  = "log.txt"
 )
 
 var user, password, server string
 
-type simpleConfig struct{
-	Auth string `json:"auth"`
+type simpleConfig struct {
+	Auth   string `json:"auth"`
 	Server string `json:"server"`
 }
 
@@ -39,7 +39,7 @@ func genCamputConfig() {
 	}
 	defer f.Close()
 	conf := simpleConfig{
-		Auth: fmt.Sprintf("userpass:%v:%v", user, password),
+		Auth:   fmt.Sprintf("userpass:%v:%v", user, password),
 		Server: server,
 	}
 	jsonEncoder := json.NewEncoder(f)
